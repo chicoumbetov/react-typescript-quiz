@@ -1,8 +1,9 @@
 import React from 'react';
+//Styles
+import { Wrapper, ButtonWrapper } from './QuestionCard.styles';
 
 //Types
 import { AnswerObject } from '../App';
-
 
 type Props = {
     question: string;
@@ -14,33 +15,37 @@ type Props = {
 }
 
 const QuestionCard: React.FC<Props> = ({
-    question, answers, callback, 
-    userAnswer, questionNr, 
+    question, answers, callback,
+    userAnswer, questionNr,
     totalQuestions
 
 }) => (
+    <Wrapper>
+        <p className="number">
+            Question: {questionNr} / {totalQuestions}
+        </p>
+        <p dangerouslySetInnerHTML={{ __html: question }} />
         <div>
-            <p className="number">
-                Question: {questionNr} / {totalQuestions}
-            </p>
-            <p dangerouslySetInnerHTML={{ __html: question }} />
-            <div>
-                {answers.map(answer => (
-                    <div key={answer}>
-                        {/*By writing !! signs we turn userAnswer to boolean
+            {answers.map(answer => (
+                <ButtonWrapper 
+                    key={answer}
+                    correct={userAnswer?.correctAnswer === answer}
+                    userClicked={userAnswer?.answer === answer}
+                >
+                    {/*By writing !! signs we turn userAnswer to boolean
                         or we can write: userAnswer ? true : false */}
-                        <button disabled={!!userAnswer}
-                                value={answer}
-                                onClick={callback}        
-                        >
-                            <span dangerouslySetInnerHTML={{ __html: answer }} />
-                        </button>
-                    </div>
-                ))}
-            </div>
+                    <button disabled={!!userAnswer}
+                        value={answer}
+                        onClick={callback}
+                    >
+                        <span dangerouslySetInnerHTML={{ __html: answer }} />
+                    </button>
+                </ButtonWrapper>
+            ))}
         </div>
-    );
+    </Wrapper>
+);
 
 export default QuestionCard;
 
-export{}
+export { }
