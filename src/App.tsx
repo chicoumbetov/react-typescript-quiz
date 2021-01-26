@@ -6,7 +6,7 @@ import { useState } from 'react';
 //Types
 import { Difficulty} from './API';
 
-type AnswerObject = {
+export type AnswerObject = {
   question: string;
   answer: string;
   correct: boolean;

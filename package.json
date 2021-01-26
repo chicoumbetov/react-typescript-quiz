@@ -1,8 +1,8 @@
 {
   "name": "react-typescript-quiz",
-  "homepage": "http://chicoumbetov.github.io/react-typescript-quiz",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://chicoumbetov.github.io/react-typescript-quiz/",
   "typings": "./declare_module.d.ts",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
