@@ -6,7 +6,7 @@ import { useState } from 'react';
 //Types
 import { Difficulty } from './API';
 //Styles
-import { GlobalStyle } from './App.styles';
+import { GlobalStyle, Wrapper } from './App.styles';
 
 
 
@@ -83,7 +83,7 @@ const App = () => {
   return (
     <>
     <GlobalStyle />
-      <div className='App'>
+      <Wrapper>
         <h1>REACT QUIZ</h1>
 
         {/*This will appear only when it's game over */}
@@ -118,7 +118,7 @@ const App = () => {
         ) : null}
 
 
-      </div>
+      </Wrapper>
     </>
   );
 }
