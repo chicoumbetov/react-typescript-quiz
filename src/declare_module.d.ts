@@ -1,4 +1,4 @@
-import React, {MouseEvent, FC} from 'react';
+import React, {MouseEvent, FC, useState} from 'react';
 import './declare_modules.d.ts';
 
 declare module 'react';
