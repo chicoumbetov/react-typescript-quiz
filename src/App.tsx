@@ -5,7 +5,6 @@ import QuestionCard from './components/QuestionCard';
 import { useState } from 'react';
 //Types
 import { Difficulty} from './API';
-import { isConstructorTypeNode } from 'typescript';
 
 type AnswerObject = {
   question: string;
@@ -65,17 +64,31 @@ const App = () => {
         </button>
       ) : null }
       
-      <p className="score"> Score:</p>
-      <p>Loading Questions ...</p>
-      {/*<QuestionCard 
+      {/* Show this if it is not game over*/}
+      {!gameOver ? <p className="score"> Score: {score}</p> : null }
+
+      {/* Show only when it is loading */}
+      {loading && <p>Loading Questions ...</p>}
+
+      {/*Show when it is neither loading nor gameOver */}
+      {!loading && !gameOver && (
+      <QuestionCard 
           questionNr={number + 1}
           totalQuestions={TOTAL_QUESTIONS}
           question={questions[number].question}
           answers={questions[number].answers}
           userAnswer={userAnswers ? userAnswers[number] : undefined}
           callback={checkAnswer}
-      />*/}
-      <button className="next" onClick={nextQuestion}>Next</button>
+      />
+      )}
+
+      {/* Show when it's not gameover nor loading 
+      and show next question when user gives an answer. */}
+      {!gameOver && !loading && userAnswers.length === number + 1 && number !== TOTAL_QUESTIONS - 1 ?(
+          <button className="next" onClick={nextQuestion}>Next</button>
+      ) : null}
+
+      
     </div>
   );
 }
