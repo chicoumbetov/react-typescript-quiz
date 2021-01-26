@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/react-typescript-quiz/static/js/main.1ec66f28.chunk.js",
-    "main.js.map": "/react-typescript-quiz/static/js/main.1ec66f28.chunk.js.map",
+    "main.js": "/react-typescript-quiz/static/js/main.3b936701.chunk.js",
+    "main.js.map": "/react-typescript-quiz/static/js/main.3b936701.chunk.js.map",
     "runtime-main.js": "/react-typescript-quiz/static/js/runtime-main.7d829a45.js",
     "runtime-main.js.map": "/react-typescript-quiz/static/js/runtime-main.7d829a45.js.map",
     "static/js/2.75c1508d.chunk.js": "/react-typescript-quiz/static/js/2.75c1508d.chunk.js",
@@ -12,6 +12,6 @@
   "entrypoints": [
     "static/js/runtime-main.7d829a45.js",
     "static/js/2.75c1508d.chunk.js",
-    "static/js/main.1ec66f28.chunk.js"
+    "static/js/main.3b936701.chunk.js"
   ]
 }
